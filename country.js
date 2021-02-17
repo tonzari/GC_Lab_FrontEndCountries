@@ -13,6 +13,8 @@ let japan = new Country("Japan", "Japanese", "Sumimasen Sumimasen", ["white", "r
 let italy = new Country("Italy", "Italian", "Che cazz stai facendo?", ["red","green","white"]);
 let china = new Country("China", "Mandarin", "Ni shi wo de baba ma?", ["red", "yellow", "yellow"]);
 
+let Countries = [usa, mexico, japan, italy, china];
+
 
 function SwitchCountry() {
 
@@ -20,28 +22,12 @@ function SwitchCountry() {
     let userChoice = selectDropDown.value;
     let country;
 
-    // I could not figure out a streamlined way to do this.
-    // I wanted to take the string from the user selection, and match it the the Country object variable name
-    // I could not find a way to access the Country object 'usa' with the string 'usa'.
-    // It would be cool do figure that out, then this function wouldn't need a long and explicit IF ELSE statement 
-    // I want it to be something that is effectively doing "country = ConvertUserStringToObjectWithSameVariableName()"
-
-    if (userChoice === "USA") {
-        country = usa;
-    }
-    else if (userChoice === "Mexico") {
-        country = mexico;
-    }
-    else if (userChoice === "Japan") {
-        country = japan;
-    }
-    else if (userChoice === "Italy")
+    for(i=0; i<Countries.length; i++)
     {
-        country = italy;
-    }
-    else if (userChoice === "China")
-    {
-        country = china;
+        if(selectDropDown.value === Countries[i].name)
+        {
+            country = Countries[i];
+        }
     }
 
     DisplayColors(country);
