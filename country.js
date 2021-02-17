@@ -20,6 +20,12 @@ function SwitchCountry() {
     let userChoice = selectDropDown.value;
     let country;
 
+    // I could not figure out a streamlined way to do this.
+    // I wanted to take the string from the user selection, and match it the the Country object variable name
+    // I could not find a way to access the Country object 'usa' with the string 'usa'.
+    // It would be cool do figure that out, then this function wouldn't need a long and explicit IF ELSE statement 
+    // I want it to be something that is effectively doing "country = ConvertUserStringToObjectWithSameVariableName()"
+
     if (userChoice === "USA") {
         country = usa;
     }
